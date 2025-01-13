@@ -86,9 +86,14 @@ button {
 
 .list {
     display: flex;
+    margin-top: 5rem;
 }
 
 .list__item {
     flex: 0 0 33%;
     text-align: center;
+}
+
+.list__text {
+    padding: 1rem;
 }
