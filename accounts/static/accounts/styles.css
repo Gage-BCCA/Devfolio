@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    min-height: 90vh;
+    align-content: center;
+    font-family: "Roboto Mono", serif;
+}
+
+a {
+    text-decoration: none;
+    color: #2c3e50;
+}
+.container {
+    background-color: rgb(236, 240, 241);
+    max-width: 40%;
+    padding: 0 2rem 1rem 2rem;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    
+}
+.headliner {
+    margin-bottom: 2rem;
+}
+.headliner__title {
+    font-size: 2.5rem;
+    font-weight: 350;
+    margin-bottom: 0;
+}
+
+.title--italicized {
+    font-weight: 200;
+    letter-spacing: .3rem;
+    color: #3498db;
+    
+}
+
+.headliner__blurb {
+    margin-top: -.5rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.loginform {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.login__field {
+    margin: 1rem;
+}
+
+.login__field > input {
+    border-radius: 5px;
+    outline: 1px solid rgb(149, 165, 166);
+    border: none;
+    padding: .5rem;
+    text-align: center;
+    transition-duration: 150ms;
+}
+    
+    .login__field > input:focus {
+        outline: 2px solid #3498db;
+        transform: scale(1.1);
+    }
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    padding: .5rem 1rem .5rem 1rem;
+    outline: none;
+    border: none;
+    transition-duration: 150ms;
+}
+
+    .submit-btn:hover {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+.register__link {
+    color: #3498db;
+    transition-duration: 150ms;
+}
+    .register__link:hover {
+        text-decoration: underline;
+    }

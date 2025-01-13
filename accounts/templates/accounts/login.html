@@ -1,7 +1,30 @@
 {% extends 'accounts/base.html' %}
 {% block content %}
-<form method="post" action="" class="login">
-    <input type="text" name="username" required/>
-    <input type="password" name="password" required/>
-</form>
+<div class="container">
+    <div class="headliner">
+        <a href="{% url 'index' %}">
+            <h1 class="headliner__title"><span class="title--italicized">Dev</span>folio</h1>
+            <p class="headliner__blurb">Get Noticed.</p>
+        </a>
+    </div>
+
+    <div>
+        <form method="post" action="" class="loginform">
+            <div class="login__field">
+                <input type="text" name="username" placeholder="Username" required/>
+            </div>
+        
+            <div class="login__field">
+                <input type="password" name="password" placeholder="Password" required/>
+            </div>
+            <div class="login__field">
+                <input type="submit" value="Sign In" class="submit-btn">
+            </div>
+        </form>
+        <div class="register">
+            <p>Don't have an account? <a href="#" class="register__link">Create one.</a></p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
