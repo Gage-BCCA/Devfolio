@@ -9,6 +9,7 @@ from portfolios.urls import *
 from portfolios.views import *
 from portfolios.templates.portfolios import *
 # Create your views here.
+<<<<<<< HEAD
 
 def registerPage(request):
     form = CreateAccount()
@@ -22,3 +23,7 @@ def registerPage(request):
             return redirect('index')
     context = {'form':form}
     return render(request, 'accounts/register.html', context)
+=======
+def login(request):
+    return render(request, 'accounts/login.html')
+>>>>>>> 786ba7e73211f63b60ac5be698eca4e7d749660d
