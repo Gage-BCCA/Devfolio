@@ -1,0 +1,9 @@
+{% extends 'portfolios/base.html' %}
+
+{% block content %}
+<h2>{{ portfolio.account.name }}'s Portfolio</h2>
+<p>Bio: {{ portfolio.bio }}</p>
+<p>Experience: {{ portfolio.experience }}</p>
+<p>Projects: {{ portfolio.projects }}</p>
+<p>Social Links: {{ portfolio.social_links }}</p>
+{% endblock %}
