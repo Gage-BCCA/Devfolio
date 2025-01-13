@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <h3>Register Account</h3>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="input" >
+            {{form.name}}
+        </div>
+        <div class="input">
+            {{form.email}}
+        </div>
+        <div class="input">
+            {{form.phone}}
+        </div>
+        <div class="input">
+            {{form.location}}
+        </div>
+        <div class="input">
+            {{form.links}}
+        </div>
+        <div class="input">
+            {{form.password}}
+        </div>
+        <div>
+            {{form.password2}}
+        </div>
+
+        <div>
+            <input
+            type="submit"
+            value="Register Account"
+            />
+
+        <script>
+            var form_fields = document.getElementsByTagName("input");
+            form_fields[1].placeholder = "Name";
+            form_fields[2].placeholder = "Email";
+            form_fields[3].placeholder = "Phone";
+            form_fields[4].placeholder = "Location";
+            form_fields[5].placeholder = "Links";
+            form_fields[6].placeholder = "Password";
+            form_fields[7].placeholder = "Re-enter Password";
+        </script>
+  </body>
+</html>
