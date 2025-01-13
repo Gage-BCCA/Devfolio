@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,16 +7,27 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
-        <navbar>
-        <ul>
-            <li>Test 1</li>
-        </ul>
+        <navbar class="navbar">
+            <div class="headliner">
+                <h1 class="headliner__title"><span class="title--italicized">Dev</span>folio</h1>
+                <p class="headliner__blurb">Get Noticed.</p>
+            </div>
+            <div class="links">
+                <div class="links__login">
+                    <a href="#">Login</a>
+                </div>
+                <div class="links__register">
+                    <a href="#">Register</a>
+                </div>
+            </div>
         </navbar>
+        <div class="content">
         {% block content %}
         {% endblock %}
+        </div>
         <script src="" async defer></script>
     </body>
 </html>

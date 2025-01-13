@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Roboto Mono", serif;
+    color: #2c3e50;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem .5rem 1.5rem;
+}
+
+.navbar {
+    display: flex;
+}
+
+.headliner {
+    flex: 0 0 85%;
+}
+
+.headliner__title {
+    font-size: 2.5rem;
+    font-weight: 350;
+    padding: .5rem 1rem 0 1rem;
+    margin-bottom: 0;
+}
+
+.title--italicized {
+    font-weight: 200;
+    letter-spacing: .3rem;
+    color: #3498db;
+    
+}
+
+.headliner__blurb {
+    margin-top: -.5rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.links {
+    flex: 0 0 15%;
+    display: flex;  
+}
+
+.links > div {
+    flex: 0 0 50%;
+    align-content: center;
+}
+
+.content {
+    width: 80%;
+    min-height: 100vh;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+/*
+*
+*   Homepage Styling
+*
+*/
+.jumbotron {
+    text-align: center;
+    background-color: #ecf0f1;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 15px;
+}
+.jumbotron__slogan {
+    font-size: 2.5rem;
+}
+
+.jumbotron__emphasis {
+    color: #3498db;
+}
+
+.jumbotron__lead {
+    padding: 1rem;
+    border-bottom: 2px solid #ddd;
+}
+
+.list {
+    display: flex;
+}
+
+.list__item {
+    flex: 0 0 33%;
+    text-align: center;
+}
