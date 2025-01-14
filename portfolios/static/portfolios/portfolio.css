@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    background-color: #ddd;
+    font-family: "Roboto Mono", serif;
+}
+
+.pic {
+    border-radius: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 8rem;
+}
+
+.intro {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.intro > div {
+    flex: 0 0 50%;
+}
+.portfolio {
+    background-color: #eee;
+    min-height: 100vh;
+    max-width: 90%;
+    margin: 5rem 10rem 0 10rem;
+    border-radius: 5px;
+}
+
+.portfolio__headliner {
+    position: relative;
+    top: 1rem;
+    left: 11rem;
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.portfolio__blurb {
+    margin-top: 0;
+    position: relative;
+    left: 11rem;
+    top: 1rem;
+    font-size: 1.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills > p {
+    flex: 1 0 10%;
+    position: relative;
+    top: 2rem;
+    left: 0;
+    background-color: #ddd;
+    border-radius: 8px;
+    padding: 0;
+    height: 25px;
+    align-content: center;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.bio {
+    padding: 1rem;
+}
+
+.experience {
+    padding: 1rem;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.project {
+    flex: 1 0 30%; 
+    text-align: center;
+    margin: 1rem;
+}
+
+.hobbies {
+    padding: 1rem;
+}

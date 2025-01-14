@@ -22,3 +22,6 @@ def create_portfolio(request):
     else:
         form = PortfolioForm()
     return render(request, 'portfolios/create_portfolio.html', {'form': form})
+
+def example_portfolio(request):
+    return render(request, 'portfolios/example_portfolio.html')
