@@ -1,0 +1,40 @@
+body {
+    background: #ddd;
+}
+
+.portfolio {
+    background-color: #eee;
+}
+
+.skills > p {
+    background-color: #3498db;
+    color: white;
+}
+
+.project {
+    border-color: #3498db;
+}
+
+.project__language {
+    background-color: #bdc3c7;
+}
+
+.project__link {
+    background-color: #3498db;
+}
+
+.contact__link {
+    background-color: #3498db;
+}
+
+.contact__link > a {
+    color: white;
+}
+
+.hobbies > ul > li {
+    background-color: #bdc3c7;
+}
+
+.experience > ul > li {
+    background-color: #bdc3c7;
+}

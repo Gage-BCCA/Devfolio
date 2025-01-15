@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    font-family: "Roboto Mono", serif;
+}
+
+.pic {
+    border-radius: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 8rem;
+}
+
+.intro {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.intro > div {
+    flex: 0 0 50%;
+}
+.portfolio {
+    min-height: 100vh;
+    max-width: 90%;
+    margin: 5rem 10rem 0 10rem;
+    border-radius: 5px;
+}
+
+.portfolio__headliner {
+    position: relative;
+    top: 1rem;
+    left: 11rem;
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.portfolio__blurb {
+    margin-top: 0;
+    position: relative;
+    left: 11rem;
+    top: 1rem;
+    font-size: 1.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills > p {
+    flex: 1 0 10%;
+    position: relative;
+    top: 2rem;
+    left: 0;
+    border-radius: 8px;
+    padding: 0;
+    height: 25px;
+    align-content: center;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.bio {
+    padding: 1rem;
+}
+
+.experience {
+    padding: 1rem;
+}
+
+    .experience > ul {
+        list-style: none;
+    }
+
+    .experience > ul > li {
+        padding: .5rem;
+        margin-top: .5rem;
+        border-radius: 5px;
+    }
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.project {
+    flex: 1 0 100%; 
+    text-align: left;
+    margin: .5rem;
+    border-bottom: 1px solid;
+    border-bottom-left-radius: 5px;
+}
+
+.project__language {
+    
+    padding: .5rem;
+    display: inline;
+    border-radius: 5px;
+}
+
+.project__link {
+    padding: .5rem;
+    border-radius: 5px;
+    transition-duration: 150ms;
+    width: 25%;
+}
+
+    .project__link > a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .project__link:hover {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+.hobbies {
+    padding: 1rem;
+}
+
+    .hobbies > ul {
+        list-style: none;
+    }
+
+    .hobbies > ul > li {
+        padding: .5rem;
+        margin-top: .5rem;
+        border-radius: 5px;
+    }
+
+.contact {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.contact__link {
+    width: 50%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    transition-duration: 150ms;
+}
+
+    .contact__link > a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .contact__link:hover {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
