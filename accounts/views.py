@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.contrib import messages
 from .models import *
 from .form import *
@@ -12,35 +12,47 @@ from portfolios.templates.portfolios import *
 # Create your views here.
 
 def register_page(request):
-    form = CreateAccount()
+    # Pass in built-in Django Form
+    form = RegisterForm()
+
     if request.method == "POST":
-        form = CreateAccount(request.POST)
+
+        # Grab the account type manually since it's
+        # not part of the build in Django form
+        account_type = request.POST.get('account-type')
+
+        form = RegisterForm(request.POST)
+
         if form.is_valid():
-            name = form.cleaned_data.get('name')
-            account_type = form.cleaned_data.get('account_type')
-            email = form.cleaned_data.get('email')
-            phone = form.cleaned_data.get('phone')
-            password = form.cleaned_data.get('password')
-            password2 = form.cleaned_data.get('password2')
-            if password == password2:
-                new_account = Account(name=name, account_type=account_type, email=email, phone=phone, password=password, password2=password2)
-                new_account.save()
-            else:
-                messages.info(request, "Passwords do not match")
-        return redirect('index')
-    context = {'form':form}
+
+            # Create user
+            new_user = form.save(commit=False)
+            new_user.username = new_user.username.lower()
+            new_user.save()
+
+            # Create related account
+            new_account = Account(
+                user = new_user,
+                account_type = account_type
+            )
+            new_account.save()
+
+            # Log the user in and redirect
+            login(request, new_user)
+            return redirect('index')
+        
+    context = {'form': form}
     return render(request, 'accounts/register.html', context)
 
 
-# def login(request):
-#     if request.method == "POST":
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         target_user = Account.objects.get(name=username)
-#         target_password = Account.objects.get(password=password)
-#         if target_user.id == target_password.id:
-#             return redirect('portfolio_detail')
-#     return render(request, 'accounts/login.html')
+def login_view(request):
+    if request.method == "POST":
+        user = authenticate(request, username=request.POST.get('username').lower(), password=request.POST.get('password'))
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+    return render(request, 'accounts/login.html')
 
-def logout(request):
-    return redirect('index')
+def logout_view(request):
+    logout(request)
+    return redirect('login')

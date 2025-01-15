@@ -1,46 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Login</title>
-  </head>
-  <body>
+{% extends 'accounts/base.html' %}
+{% block content %}
     <h3>Register Account</h3>
 
     <form method="POST" action="">
         {% csrf_token %}
-
-        <div class="input" >
-            {{form.name}}
-        </div>
-        <div class="input" >
-            {{form.account_type}}
-        </div>
-        <div class="input">
-            {{form.email}}
-        </div>
-        <div class="input">
-            {{form.phone}}
-        </div>
-        <div class="input">
-            {{form.password}}
-        </div>
-        <div>
-            {{form.password2}}
-        </div>
-
-        <div>
-            <input
-            type="submit"
-            value="Register Account"
-            />
-
-        <script>
-            var form_fields = document.getElementsByTagName("input");
-            form_fields[1].placeholder = "Name";
-            form_fields[2].placeholder = "Email";
-            form_fields[3].placeholder = "Phone";
-            form_fields[4].placeholder = "Password";
-            form_fields[5].placeholder = "Re-enter Password";
-        </script>
-  </body>
-</html>
+        {{ form.as_div }}
+        <input type="radio" name="account-type" value="employee" id="employee">
+        <label for="employee">Hiring</label>
+        <input type="radio" name="account-type" value="employer" id="employer">
+        <label for="employer">Wanting to be Hired</label>
+        <input type="submit" value="Register">
+    </form>
+{% endblock %}
