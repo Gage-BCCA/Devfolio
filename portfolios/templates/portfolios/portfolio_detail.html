@@ -1,9 +1,115 @@
-{% extends 'portfolios/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
 
-{% block content %}
-<h2>{{ portfolio.account.name }}'s Portfolio</h2>
-<p>Bio: {{ portfolio.bio }}</p>
-<p>Experience: {{ portfolio.experience }}</p>
-<p>Projects: {{ portfolio.projects }}</p>
-<p>Social Links: {{ portfolio.social_links }}</p>
-{% endblock %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ bio.name }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {# START Layout Rendering #}
+    {# Conditionally render the layout based on the portfolio's layout flag #}
+        {% if portfolio.layout == 1%}
+            <link rel="stylesheet" href="{% static 'portfolios/layouts/layout_1.css' %}">
+        {% else if portfolio.layout == 2%}
+            <link rel="stylesheet" href="{% static 'portfolios/layouts/layout_2.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static 'portfolios/layouts/layout_1.css' %}">
+        {% endif %}
+    {# END Layout Rendering #}
+
+    {# START Color Theme Rendering #}
+    {# Conditionally render the layout based on the portfolio's color theme flag #}
+        {% if portfolio.color_theme == 1 %}
+            <link rel="stylesheet" href="{% static 'portfolios/colors/color_theme_1.css' %}">
+        {% else %}
+            <link rel="stylesheet" href="{% static 'portfolios/colors/color_theme_1.css' %}">
+        {% endif %}
+    {# END Color Theme Rendering #}
+</head>
+
+<body>
+    <img src="https://placehold.co/200x200/3498db/white" class="pic">
+    <div class="portfolio">
+
+        <div class="intro">
+            {# START Name and Tagline #}
+                <div class="name">
+                    <h1 class="portfolio__headliner">{{ bio.name }}</h1>
+                    <p class="portfolio__blurb">{{ bio.tagline }}</p>
+                </div>
+            {#END Name and Tagline#}
+
+            {# START Skills #}
+                <div class="skills">
+                    {% for skill in skills  %}
+                        <p>{{ skill.skill_name }}</p>
+                    {% endfor %}
+                </div>
+            {# END Skills #}
+        </div>
+
+        {# START Bio #}
+            <div class="bio">
+                <h2>About Me</h2>
+                <p>{{ bio.bio }}</p>
+            </div>
+        {# END Bio #}
+
+        {# START Experience #}
+        {# We reuse the skills that are rendered from the top of the page for this section #}
+            <div class="experience">
+                <h2>Experience</h2>
+                <ul>
+                    {% for skill in skills  %}
+                    <li>{{ skill.skill_name }}: {{ skill.experience_level }}
+                    {% endfor %}
+                </ul>
+            </div>
+        {# END Experience #}
+
+        {# START Projects #}
+            <div class="projects">
+                {% for project in projects %}
+                <div class="project">
+                    <h1>{{ project.title }}</h1>
+                    <p class="project__language">{{ project.language }}</p>
+                    <p>
+                        {{ project.description }}
+                    </p>
+                    <div class="project__link">
+                        <a href="{{ project.project_link }}" > See Project </a>            
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {# END Projects #}
+
+        <div class="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Video Games</li>
+                <li>Reading</li>
+            </ul>
+        </div>
+        
+        {# START Contact #}
+        <div class="contact">
+            <h1>Let's Get in Touch!</h1>
+            {% for link in links %}
+                <div class="contact__link">
+                    <a href="{{ link.url }}">{{ link.link_type }}</a>
+                </div>
+            {% endfor %}
+        </div>
+        {# END Contact #}
+    </div>
+</body>
+
+</html>
