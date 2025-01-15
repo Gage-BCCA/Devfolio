@@ -1,7 +1,8 @@
 {% extends 'portfolios/base.html' %}
 
 {% block content %}
-<form class="portfolio-form">
+<form class="portfolio-form" action="" method="post">
+    {% csrf_token %}
     <h1>Add a Skill</h1>
     <p>
         What are you good at?

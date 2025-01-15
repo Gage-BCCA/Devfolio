@@ -4,28 +4,46 @@
 <h1>Employee </h1>
 
 {% if not portfolio %}
+
     <h2>No Portfolio found</h2>
     <div>
         <a href="{% url 'portfolio_create' %}">Create Your Portfolio</a>
     </div>
+
 {% elif portfolio and not is_portfolio_complete %}
+
     <h2>Complete Your Portfolio</h2>
+    <p>
+        Don't worry, you'll be able to add more information later. This 
+        is the basic information needed to generate a devfolio.
+    </p>
 
     {% if not bio %}
-        <button>Create Bio</button>
+    <div>
+        <a href="{% url 'bio_create' %}">Complete Your Bio</a>
+    </div>
     {% endif %}
 
     {% if not projects %}
-        <button>Add Project</button>
+    <div>
+        <a href="{% url 'project_create' %}">Add a Project</a>
+    </div>
     {% endif %}
 
     {% if not skills %}
-        <button>Add Skill</button>
+    <div>
+        <a href="{% url 'skill_create' %}">Add a Skill</a>
+    </div>
     {% endif %}
 
-    {% if not links %}
-    <button>Add External Link</button>
+    {% if not links and bio %}
+    <div>
+        <a href="{% url 'link_create' %}">Add an External Link</a>
+    </div>
     {% endif %} 
+{% else %}
 
+<a href="{% url 'portfolio_view' request.user.username %}">See your Portfolio!</a>
 {% endif %}
+
 {% endblock %}

@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('portfolio_detail', views.portfolio_details, name='portfolio_detail'),
     path('portfolio/create/', views.portfolio_create, name='portfolio_create'),
     path('project/create/', views.project_create, name='project_create'),
     path('skill/create/', views.skill_create, name='skill_create'),
@@ -12,6 +11,9 @@ urlpatterns = [
 
     # Landing Pages
     path('landing/', views.employee_landing_view, name="employee_landing"),
-    path('hiring/', views.employer_landing_view, name="employer_landing")
+    path('hiring/', views.employer_landing_view, name="employer_landing"),
+
+    # Portfolio Page
+    path('<str:username>/', views.portfolio_view, name="portfolio_view")
 
 ]

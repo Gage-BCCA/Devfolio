@@ -41,6 +41,8 @@ class Bio(models.Model):
 
 
 class Link(models.Model):
+    #TODO: change this to a portfolio instead of bio
+    #NOTE: will require all migrations to be deleted and remade
     bio = models.ForeignKey(Bio, on_delete=models.CASCADE)
     link_type = models.CharField(max_length=50)
     url = models.URLField()

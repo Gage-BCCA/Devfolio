@@ -1,7 +1,8 @@
 {% extends 'portfolios/base.html' %}
 
 {% block content %}
-<form class="portfolio-form">
+<form class="portfolio-form" action="" method="POST">
+    {% csrf_token %}
     <h1>Tell Us About Yourself</h1>
     <p>
         Who are you?

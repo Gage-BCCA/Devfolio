@@ -1,7 +1,8 @@
 {% extends 'portfolios/base.html' %}
 
 {% block content %}
-<form class="portfolio-form">
+<form class="portfolio-form" action="" method="post">
+    {% csrf_token %}
     <h1>Add External Links</h1>
     <p>
         What else do you have to show us?
