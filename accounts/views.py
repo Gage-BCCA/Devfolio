@@ -32,12 +32,15 @@ def register_page(request):
     return render(request, 'accounts/register.html', context)
 
 
-def login(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('portfolio_detail')
-    return render(request, 'accounts/login.html')
+# def login(request):
+#     if request.method == "POST":
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         target_user = Account.objects.get(name=username)
+#         target_password = Account.objects.get(password=password)
+#         if target_user.id == target_password.id:
+#             return redirect('portfolio_detail')
+#     return render(request, 'accounts/login.html')
+
+def logout(request):
+    return redirect('index')
