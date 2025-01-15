@@ -11,7 +11,7 @@ from portfolios.views import *
 from portfolios.templates.portfolios import *
 # Create your views here.
 
-def registerPage(request):
+def register_page(request):
     form = CreateAccount()
     if request.method == "POST":
         form = CreateAccount(request.POST)
@@ -33,4 +33,11 @@ def registerPage(request):
 
 
 def login(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('portfolio_detail')
     return render(request, 'accounts/login.html')
