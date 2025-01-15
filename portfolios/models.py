@@ -4,12 +4,12 @@ from accounts.models import Account
 from django.contrib.auth.models import User
 
 class Portfolio(models.Model):
-    account = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     layout = models.IntegerField()
     color_theme = models.IntegerField()
     
     def __str__(self):
-        return f"{self.account.name}'s portfolio"
+        return f"{self.user.username}'s portfolio"
     
 class Project(models.Model):
     portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
@@ -31,7 +31,7 @@ class Skill(models.Model):
         return self.skill_name
 
 class Bio(models.Model):
-    portfolio = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
+    portfolio = models.OneToOneField(Portfolio, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     bio = models.TextField()
     location = models.CharField(max_length=100)

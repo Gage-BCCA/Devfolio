@@ -1,13 +1,16 @@
 {% extends 'portfolios/base.html' %}
 
 {% block content %}
-<form class="portfolio-form">
+<form class="portfolio-form" action="" method="POST">
+    {% csrf_token %}
     <h1>Start your Portfolio</h1>
     <p>
         You're about to complete the first step
         of upping your online presence.
     </p>
 {{ form.as_div }}
+
+<input type="hidden" name="user" value="{{ request.user.id }}">
 <input type="submit" value="Create Portfolio" class="submit-btn" />
 </form>
 

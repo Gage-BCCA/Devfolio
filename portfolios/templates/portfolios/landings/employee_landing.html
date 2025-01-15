@@ -2,4 +2,30 @@
 
 {% block content %}
 <h1>Employee </h1>
+
+{% if not portfolio %}
+    <h2>No Portfolio found</h2>
+    <div>
+        <a href="{% url 'portfolio_create' %}">Create Your Portfolio</a>
+    </div>
+{% elif portfolio and not is_portfolio_complete %}
+    <h2>Complete Your Portfolio</h2>
+
+    {% if not bio %}
+        <button>Create Bio</button>
+    {% endif %}
+
+    {% if not projects %}
+        <button>Add Project</button>
+    {% endif %}
+
+    {% if not skills %}
+        <button>Add Skill</button>
+    {% endif %}
+
+    {% if not links %}
+    <button>Add External Link</button>
+    {% endif %} 
+
+{% endif %}
 {% endblock %}

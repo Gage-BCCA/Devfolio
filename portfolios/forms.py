@@ -5,7 +5,7 @@ from .models import Portfolio, Project, Skill, Bio, Link
 class PortfolioForm(forms.ModelForm):
     class Meta:
         model = Portfolio
-        fields = '__all__'
+        fields = ['layout', 'color_theme']
         
 class ProjectForm(forms.ModelForm):
     class Meta:
