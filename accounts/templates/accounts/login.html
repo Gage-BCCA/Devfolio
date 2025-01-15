@@ -10,6 +10,7 @@
 
     <div>
         <form method="post" action="" class="loginform">
+            {% csrf_token %}
             <div class="login__field">
                 <input type="text" name="username" placeholder="Username" required/>
             </div>
