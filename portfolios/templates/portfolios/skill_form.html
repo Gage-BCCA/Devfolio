@@ -1,0 +1,14 @@
+{% extends 'portfolios/base.html' %}
+
+{% block content %}
+<form class="portfolio-form">
+    <h1>Add a Skill</h1>
+    <p>
+        What are you good at?
+    </p>
+{{ form.as_div }}
+<input type="submit" value="Create Skill" class="submit-btn" />
+</form>
+
+
+{% endblock %}

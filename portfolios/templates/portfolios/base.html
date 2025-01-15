@@ -16,12 +16,16 @@
                 <p class="headliner__blurb">Get Noticed.</p>
             </div>
             <div class="links">
+                {# Conditionally render the login/register button or edit/view buttons #}
+                {% if request.user.is_authenticated %}
+                {% else %}
                 <div class="links__login">
                     <a href="{% url 'login' %}">Login</a>
                 </div>
                 <div class="links__register">
                     <a href="#">Register</a>
                 </div>
+                {% endif %}
             </div>
         </navbar>
         <div class="content">

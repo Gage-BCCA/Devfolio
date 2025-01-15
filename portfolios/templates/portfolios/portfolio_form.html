@@ -1,0 +1,15 @@
+{% extends 'portfolios/base.html' %}
+
+{% block content %}
+<form class="portfolio-form">
+    <h1>Start your Portfolio</h1>
+    <p>
+        You're about to complete the first step
+        of upping your online presence.
+    </p>
+{{ form.as_div }}
+<input type="submit" value="Create Portfolio" class="submit-btn" />
+</form>
+
+
+{% endblock %}

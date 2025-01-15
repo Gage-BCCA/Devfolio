@@ -97,3 +97,44 @@ button {
 .list__text {
     padding: 1rem;
 }
+
+.portfolio-form {
+    margin: auto;
+    background-color: rgb(236, 240, 241);
+    max-width: 80%;
+    padding: 0 2rem 1rem 2rem;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+    .portfolio-form > div {
+        margin: 1rem;
+    }
+    .portfolio-form > div > input {
+        border-radius: 5px;
+        outline: 1px solid rgb(149, 165, 166);
+        border: none;
+        padding: .5rem;
+        text-align: center;
+        transition-duration: 150ms;
+    }
+
+    .portfolio-form > div > input:focus {
+        outline: 2px solid #3498db;
+        transform: scale(1.1);
+    }
+
+    .submit-btn {
+        background-color: #3498db;
+        color: white;
+        padding: .5rem 1rem .5rem 1rem;
+        outline: none;
+        border: none;
+        transition-duration: 150ms;
+    }
+    
+    .submit-btn:hover {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
