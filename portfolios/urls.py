@@ -10,4 +10,8 @@ urlpatterns = [
     path('bio/create/', views.bio_create, name='bio_create'),
     path('link/create/', views.link_create, name='link_create'),
 
+    # Landing Pages
+    path('landing/', views.employee_landing_view, name="employee_landing"),
+    path('hiring/', views.employer_landing_view, name="employer_landing")
+
 ]

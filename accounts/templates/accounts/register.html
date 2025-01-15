@@ -5,10 +5,10 @@
     <form method="POST" action="">
         {% csrf_token %}
         {{ form.as_div }}
-        <input type="radio" name="account-type" value="employee" id="employee">
-        <label for="employee">Hiring</label>
         <input type="radio" name="account-type" value="employer" id="employer">
-        <label for="employer">Wanting to be Hired</label>
+        <label for="employer">Hiring</label>
+        <input type="radio" name="account-type" value="employee" id="employee">
+        <label for="employee">Wanting to be Hired</label>
         <input type="submit" value="Register">
     </form>
 {% endblock %}

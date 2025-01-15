@@ -13,6 +13,5 @@ class Account(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     account_type = models.CharField(choices=ACCOUNT_TYPE, max_length=10)
 
-
     def __str__(self):
-        return self.name
+        return self.user.username
